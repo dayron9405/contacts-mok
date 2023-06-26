@@ -290,34 +290,34 @@ const TableGeneric: React.FC<ITableGeneric> = ({
                 {columns.map((column, inxCol) => (
                   <td key={inxCol} className="py-4 px-6 border-b">
                     {column.type === "img" ? (
-                      <img
-                        width={40}
-                        src={item[inxCol].src}
-                        alt={item[inxCol].alt}
-                      />
+                      <div className="w-full flex justify-start items-center">
+                        <img
+                          style={{ maxWidth: "100%", height: "auto" }}
+                          src={item[inxCol].src}
+                          alt={item[inxCol].alt}
+                        />
+                      </div>
                     ) : (
                       item[inxCol][column.key]
                     )}
-                    {/* { column.type === 'img' 
-                      ? <img width={40} src={renderValue(item, column.key)} alt={'img-'+ inx + renderValue(item, column.key)}  /> 
-                      : renderValue(item, column.key)
-                    } */}
                   </td>
                 ))}
                 <td className="py-4 px-6 border-b flex justify-end items-center">
-                  <button
-                    className="m-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md focus:outline-none"
-                    onClick={() => deleteItem(inx)}
+                <button
+                  name="delete"
+                  className="m-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md focus:outline-none"
+                  onClick={() => deleteItem(inx)}
+                  aria-label="Eliminar ítem"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 -960 960 960"
-                      width="24"
-                    >
-                      <path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z" />
-                    </svg>
-                  </button>
+                    <path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z" />
+                  </svg>
+                </button>
                 </td>
               </tr>
             ))}

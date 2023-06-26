@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import App from "./App";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate, Route } from "react-router-dom";
 // import Contacts from './views/contacts/Contacts';
 
 const Favorites = lazy(() => import("./views/favorites/Favorites"));
@@ -13,9 +13,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "/",
+        element: <Navigate to="/contacts" replace={true} />
+      }, 
+      {
         path: "contacts",
         element: (
-          <Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
             <Contacts />
           </Suspense>
         ),
@@ -23,11 +27,11 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: (
-          <Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
             <Favorites />
           </Suspense>
         ),
-      }
+      },
     ],
   },
 ]);
