@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting Started
+
+### Config environmets
+
+Create file .env with the values of .env.example file
+
+### Install Dependences
+
+yarn install
+
+### Get up project
+
+yarn start
+
+## Project Improvements
+
+1. Create a new functionality to add to favorite contacts.
+1. Create a new functionality to add to blocked contacts.
+2. Create separate components for "<thead>" and "<tbody>" that are in the "<tableGeneric />" component.
+
 ## Available Scripts
 
 In the project directory, you can run:
