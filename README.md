@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Config environmets
 
-Create file .env with the values of .env.example file
+Create the .env file with the values from the .env.example file
 
 ### Install Dependences
 
