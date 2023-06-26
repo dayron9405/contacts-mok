@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <div className='p-4 flex justify-center items-center fixed w-full bg-white'>
-        <img src="/mok.png" alt="logo mok" width={80}/>
+        {/* <img src="/mok.png" alt="logo mok" width={80}/> */}
         <h1 className='mx-2 text-2xl font-semibold'>App de contactos</h1>
         <nav className='flex justify-center items-center no-underline'>
         <div className='mx-2'>

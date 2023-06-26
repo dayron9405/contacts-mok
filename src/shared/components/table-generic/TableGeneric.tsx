@@ -80,7 +80,6 @@ const TableGeneric: React.FC<ITableGeneric> = ({
     const newData = [...dataTable];
     newData.splice(inx, 1);
     setDataTable(newData);
-    // deleteRow && deleteRow(item)
   };
 
   const changeStyle = () => {

@@ -21,16 +21,12 @@ export default function useFetch(
   const [hasMore, setHasMore] = useState(true);
 
   const handleScroll = () => {
-    // Verifica si se ha llegado al final de la página
     if (
       window.innerHeight + document.documentElement.scrollTop + 1 >=
       document.documentElement.offsetHeight
     ) {
-      // Evita realizar una nueva carga si ya se está cargando contenido
       if (loading && hasMore) {
         setLoading(true);
-        // setPage(page+1)
-        // setPage((prevPage) => prevPage + 1); // Incrementa el número de página
       }else {
         setPage((prevPage) => prevPage + 1);
         if (!loading) {
