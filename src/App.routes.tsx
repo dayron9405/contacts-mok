@@ -1,0 +1,35 @@
+import React, { lazy, Suspense } from "react";
+import App from "./App";
+import { createBrowserRouter } from "react-router-dom";
+// import Contacts from './views/contacts/Contacts';
+
+const Favorites = lazy(() => import("./views/favorites/Favorites"));
+const Contacts = lazy(() => import("./views/contacts/Contacts"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        path: "contacts",
+        element: (
+          <Suspense>
+            <Contacts />
+          </Suspense>
+        ),
+      },
+      {
+        path: "favorites",
+        element: (
+          <Suspense>
+            <Favorites />
+          </Suspense>
+        ),
+      }
+    ],
+  },
+]);
+
+export default router;

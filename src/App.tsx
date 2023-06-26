@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Link, Outlet } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='p-4 flex justify-center items-center fixed w-full bg-white'>
+        <img src="/mok.png" alt="logo mok" width={80}/>
+        <h1 className='mx-2 text-2xl font-semibold'>App de contactos</h1>
+        <nav className='flex justify-center items-center no-underline'>
+        <div className='mx-2'>
+            <Link to={'contacts'}>Contactos</Link>
+          </div>
+          <div className='mx-2'>
+            <Link to={'favorites'}>Favoritos</Link>
+          </div>
+        </nav>
+      </div>
+      <div className='py-24'>
+        <Outlet />
+      </div>
     </div>
   );
 }
