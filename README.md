@@ -20,7 +20,7 @@ yarn start
 
 1. Create a new functionality to add to favorite contacts.
 1. Create a new functionality to add to blocked contacts.
-2. Create separate components for "<thead>" and "<tbody>" that are in the "<tableGeneric />" component.
+2. Create separate components for "thead" and "tbody" that are in the "tableGeneric" component.
 
 ## Available Scripts
 
