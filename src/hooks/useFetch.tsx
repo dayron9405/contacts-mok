@@ -63,7 +63,7 @@ export default function useFetch(
         },
         body: body ? JSON.stringify(body) : null,
       };
-      const response = await fetch(`${url}?page=${page}&results=${3}`, options);
+      const response = await fetch(`${url}?page=${page}&results=${20}`, options);
       const responseData = await response.json();
       setResponse(responseData)
       setHasMore(responseData?.results.length > 0);
