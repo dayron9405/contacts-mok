@@ -155,10 +155,10 @@ const TableGeneric: React.FC<ITableGeneric> = ({
   return (
     <div className="TableGeneric m-4">
       <h2 className="m-4 font-semibold text-2xl">{title}</h2>
-      <div className="m-4 flex justify-between items-center">
-        <div className="w-3/6 flex justify-start items-center">
+      <div className="m-4 flex flex-col justify-between items-center lg:flex-row">
+        <div className="w-full flex flex-col justify-start items-center lg:w-3/6 md:flex-row">
           <button
-            className="flex  justify-center items-center bg-primary w-3/6 hover:bg-primaryHover text-white font-semibold m-2 py-2 px-4 rounded-full shadow"
+            className="flex justify-center items-center bg-primary w-full lg:w-5/6 hover:bg-primaryHover text-white font-semibold m-2 py-2 px-4 rounded-full shadow"
             onClick={orderByFilter}
           >
             <span className="mx-1"> Ordenar por { filter?.label }</span>
@@ -197,9 +197,9 @@ const TableGeneric: React.FC<ITableGeneric> = ({
             onChange={handleChange}
           />
         </div>
-        <div className="flex  justify-end items-center">
+        <div className="w-full flex flex-col justify-start items-center whitespace-nowrap lg:w-auto md:flex-row lg:justify-end">
           <button
-            className="flex justify-center items-center bg-primary hover:bg-primaryHover text-white font-semibold m-2 py-2 px-4 rounded-full shadow"
+            className="w-full flex justify-center items-center bg-primary hover:bg-primaryHover text-white font-semibold m-2 py-2 px-4 rounded-full shadow "
             onClick={restart}
           >
             <span className="mx-1">Restaurar datos</span>
@@ -210,7 +210,7 @@ const TableGeneric: React.FC<ITableGeneric> = ({
             </span>
           </button>
           <button
-            className={"flex justify-center items-center text-white font-semibold m-2 py-2 px-4 rounded-full shadow " + buttonStyle[tableStyle]}
+            className={"w-full flex justify-center items-center text-white font-semibold m-2 py-2 px-4 rounded-full shadow " + buttonStyle[tableStyle] + ' '}
             onClick={changeStyle}
           >
             <span className="mx-1">Cambiar estilo</span>
